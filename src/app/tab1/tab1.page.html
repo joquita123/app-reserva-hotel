@@ -1,0 +1,9 @@
+<ion-header><ion-toolbar color="primary"><ion-title>Reserva de Hotel</ion-title></ion-toolbar></ion-header>
+<ion-content class="ion-padding">
+  <h2>Monte seu orçamento</h2>
+  <p>Informe a diária e escolha a quantidade de dias.</p>
+  <ion-item><ion-label position="stacked">Valor da diária (R$)</ion-label><ion-input type="number" min="0" placeholder="Ex.: 250" [(ngModel)]="diaria"></ion-input></ion-item>
+  <ion-item lines="none"><ion-label>Quantidade de dias: {{ dias }}</ion-label></ion-item>
+  <ion-range min="1" max="30" step="1" snaps="true" ticks="true" [(ngModel)]="dias"><ion-label slot="start">1</ion-label><ion-label slot="end">30</ion-label></ion-range>
+  <ion-button expand="block" class="ion-margin-top" (click)="continuar()">CONTINUAR E CALCULAR</ion-button>
+</ion-content>

@@ -1,0 +1,4 @@
+<ion-header><ion-toolbar color="primary"><ion-title>Orçamentos Salvos</ion-title></ion-toolbar></ion-header>
+<ion-content><ion-list *ngIf="lista.length > 0; else vazio"><ion-item *ngFor="let orcamento of lista; let i = index"><ion-label><h2>R$ {{ orcamento.total | number:'1.2-2' }}</h2><p>Diária: R$ {{ orcamento.diaria | number:'1.2-2' }} | Dias: {{ orcamento.dias }}</p><p>{{ orcamento.data }}</p></ion-label><ion-button color="danger" fill="clear" (click)="excluir(i)">EXCLUIR</ion-button></ion-item></ion-list>
+  <ng-template #vazio><div class="ion-padding ion-text-center"><p>Nenhum orçamento salvo.</p></div></ng-template><div class="ion-padding"><ion-button expand="block" fill="outline" routerLink="/">VOLTAR</ion-button></div>
+</ion-content>
